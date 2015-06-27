@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>nexus_install</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>Nexus</h2>
+<p>使用<strong>Maven</strong>构建项目的应该都听说过<strong>nexus</strong>，他能帮你构建一个本地maven仓库，毕竟中央仓库有时可能会连不上；再者，更重要的是他可以帮你以maven的形式管理自己的项目。</p>
+<p>下面是简单的在Centos上的安装过程：</p>
+<h3>1. 安装准备</h3>
+<p>安装最新版本就行</p>
+<blockquote>
+<p># <strong>yum install java</strong>  
+</p>
+</blockquote>
+<h3>2. 下载Nexus</h3>
+<p><strong>nexus</strong> 不能<strong>yum</strong> 安装，因此我们只能下载包进行手动安装。</p>
+<p>访问官方网站，进入nexus的下载页面<a href="http://www.sonatype.org/nexus/go" title="http://www.sonatype.org/nexus/go">http://www.sonatype.org/nexus/go</a>，然后选择<strong>“TGZ”</strong>格式的安装包进行下载。</p>
+<h3>3. 安装Nexus</h3>
+<ol>
+<li>
+<p>解压文件，移动文件夹</p>
+<blockquote>
+<p># <strong>tar xvzf nexus-2.11.2.-06-bundle.tar.gz</strong></p>
+<p># <strong>mv nexus-2.11.2-06 /usr/local/nexus-2.11.2-06</strong></p>
+<p># <strong>cd /usr/local/</strong></p>
+<p># <strong>ln -s nexus-2.11.2-06 nexus</strong></p>
+</blockquote>
+</li>
+<li>
+<p>修改nexus.conf配置文件</p>
+<blockquote>
+<p>#<strong>vi /usr/local/nexus/conf/nexus.properties</strong></p>
+</blockquote>
+<p>可以修改端口等信息。</p>
+<p><img src="nexus_install/nexus_install.png" alt="图片1 nexus" /></p>
+</li>
+<li>
+<p>设置<strong>nexus</strong>为系统服务并开机自启动</p>
+<ul>
+<li>
+<p>复制$NEXUS_HOME/bin/jsw/linux-x86-64/nexus 到/etc/init.d/nexus</p>
+<blockquote>
+<p># <strong>cd /etc/init.d/</strong></p>
+<p># <strong>cp /usr/local/nexus/bin/jsw/linux-x86-64/nexus nexus</strong></p>
+</blockquote>
+</li>
+<li>
+<p>编辑/etc/init.d/nexus文件：</p>
+<p>a)修改<em>NEXUS_HOME</em>为绝对路径；</p>
+<p>b)设置<em>RUN<em>AS</em>USER=root</em>，即运行nexus的用户</p>
+<p><img src="nexus_install/nexus_edit.png" alt="图片2 nexus" /></p>
+<p>c) &gt; # <strong>chkconfig --add nexus</strong></p>
+<p>d) &gt; # <strong>chkconfig --levels 345 nexus on</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>启动<strong>Nexus</strong></p>
+</li>
+</ol>
+<blockquote>
+<p># <strong>systemctl start nexus</strong></p>
+</blockquote>
+<ol>
+<li>防火墙设置</li>
+</ol>
+<blockquote>
+<p># <strong>firewall-cmd --zone=public --add-port=8081/tcp --permanent</strong></p>
+<p># <strong>firewall-cmd --reload</strong></p>
+</blockquote>
+<h3>4. Neuxs配置</h3>
+<ol>
+<li>
+<p><strong>开启远程索引</strong></p>
+<p>新搭建的neuxs环境只是一个空的仓库，需要手动和远程中心库进行同步，nexus默认是关闭远程索引下载，最重要的一件事情就是开启远程索引下载。登陆nexus系统，默认用户名密码为admin/admin123。</p>
+<p>点击左边Administration菜单下面的Repositories，找到右边仓库列表中的三个仓库Apache Snapshots，Codehaus Snapshots和Maven Central，然后再没有仓库的configuration下把Download Remote Indexes修改为true。</p>
+<p><img src="nexus_install/nexus_index.png" alt="图片3 nexus" /></p>
+<p>然后在<em>Apache Snapshots</em>，<em>Codehaus Snapshots<em>和</em>Maven Central</em>这三个仓库上分别右键，选择<em>Repari Index</em>，这样Nexus就会去下载远程的索引文件。</p>
+<p><img src="nexus_install/nexus_require.png" alt="图片4 nexus" /></p>
+</li>
+<li>
+<p><strong>建立宿主仓库</strong></p>
+<p>新建公司的内部仓库，步骤为<em>Repositories</em> –&gt; <em>Add</em> –&gt; <em>Hosted Repository</em>，在页面的下半部分输入框中填入<em>Repository ID<em>和</em>Repository Name<em>即可，另外把<em>Deployment Policy</em>设置为</em>Allow Redeploy</em>，点击save就创建完成了。这里我点击添加宿主类型的仓库，在仓库列表的下方会出现新增仓库的配置，如下所示：</p>
+<p><img src="nexus_install/nexus_host.png" alt="图片5 nexus" /></p>
+</li>
+<li>
+<p><strong>创建Nexus代理仓库</strong></p>
+<p>代理仓库的创建与宿主仓库的创建基本一致，步骤为<em>Repositories</em> –&gt; <em>Add</em> –&gt; <em>Proxy Repository</em>，只有一点不同，需多填一个<em>Remote Storage Location<em>。创建代理仓库的目的是因为中央仓库在国内并不能很好的访问。依次创建</em>main proxy repository</em> 和 <em>thirdpart proxy repository</em>，如下图：</p>
+<p><img src="nexus_install/nexus_proxy.png" alt="图片5 nexus" /></p>
+</li>
+<li>
+<p><strong>创建Nexus仓库组</strong></p>
+<p>Nexus 中仓库组的概念是Maven没有的，在Maven看来，不管你是hosted也好，proxy也好，或者group也好，对我都是一样的，我只管根据 groupId，artifactId，version等信息向你要构件。为了方便Maven的配置，Nexus能够将多个仓库，hosted或者 proxy合并成一个group，这样，Maven只需要依赖于一个group，便能使用所有该group包含的仓库的内容。</p>
+<p>neuxs中默认自带了一个名为“Public Repositories”组，点击该组可以对他保护的仓库进行调整，把刚才建立的公司内部仓库scb repostiory等加入其中，这样就不需要再在maven中明确指定内部仓库 的地址了。同时创建一个Group ID为public-snapshots、Group Name为Public Snapshots Repositories的组，把Apache Snapshots、Codehaus Snapshots、Snapshots和zfy repostiory等加入其中。</p>
+</li>
+<li>
+<p><strong>maven中设置</strong></p>
+<p>使用时，在maven的配置文件<em>settiong.xml</em>中做如下修改：</p>
+<p><img src="nexus_install/nexus_setting1.png" alt="图片6 nexus" /></p>
+<p><img src="nexus_install/nexus_setting2.png" alt="图片6 nexus" /></p>
+<p><img src="nexus_install/nexus_setting3.png" alt="图片6 nexus" /></p>
+<p><img src="nexus_install/nexus_setting4.png" alt="图片6 nexus" /></p>
+</li>
+<li>
+<p><strong>在项目的POM.xml中配置</strong></p>
+<p><img src="nexus_install/nexus_dis.png" alt="图片6 nexus" /></p>
+</li>
+</ol>
+<h3>Maven 安装</h3>
+<blockquote>
+<p># <strong>wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo</strong></p>
+<p># <strong>yum install apache-maven</strong></p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
