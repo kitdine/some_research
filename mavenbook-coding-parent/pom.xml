@@ -276,6 +276,11 @@
         <artifactId>guava</artifactId>
         <version>${guava-version}</version>
       </dependency>
+	  <dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.10</version>
+	  </dependency>
       <!-- data source -->
       <dependency>
         <groupId>com.alibaba</groupId>

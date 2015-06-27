@@ -14,8 +14,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import org.apache.commons.codec.binary.Base64;
 
 
 /**
@@ -52,7 +51,7 @@ public class StringZIPUtil {
             }
         }
 
-        return new BASE64Encoder().encode(out.toByteArray());
+        return Base64.encodeBase64String(out.toByteArray());
     }
 
     /**
@@ -70,7 +69,7 @@ public class StringZIPUtil {
         byte[] compressed = null;
         String decompressed = null;
         try {
-            compressed = new BASE64Decoder().decodeBuffer(compressedStr);
+            compressed = Base64.decodeBase64(compressedStr);
             in = new ByteArrayInputStream(compressed);
             ginzip = new GZIPInputStream(in);
 
@@ -124,7 +123,7 @@ public class StringZIPUtil {
             zout.write(str.getBytes());
             zout.closeEntry();
             compressed = out.toByteArray();
-            compressedStr = new BASE64Encoder().encodeBuffer(compressed);
+            compressedStr = Base64.encodeBase64String(compressed);
         } catch (IOException e) {
             compressed = null;
         } finally {
@@ -159,7 +158,7 @@ public class StringZIPUtil {
         ZipInputStream zin = null;
         String decompressed = null;
         try {
-            byte[] compressed = new BASE64Decoder().decodeBuffer(compressedStr);
+            byte[] compressed = Base64.decodeBase64(compressedStr);
             out = new ByteArrayOutputStream();
             in = new ByteArrayInputStream(compressed);
             zin = new ZipInputStream(in);
