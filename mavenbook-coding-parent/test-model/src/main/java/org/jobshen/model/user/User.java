@@ -17,7 +17,7 @@ import org.jobshen.model.enums.Sex;
  * @since version1.0
  */
 @Alias("User")
-public class User extends BaseEntity {
+public class User extends BaseEntity<User> {
 
     private static final long serialVersionUID = 6206347086326365714L;
 

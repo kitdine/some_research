@@ -9,6 +9,8 @@
 
 package org.jobshen.service;
 
+import java.util.List;
+
 import org.jobshen.model.user.User;
 
 /**
@@ -26,5 +28,7 @@ public interface UserService {
     User getUserById(long id);
     
     long insertUser(User user);
+    
+    List<User> getUsers();
 
 }

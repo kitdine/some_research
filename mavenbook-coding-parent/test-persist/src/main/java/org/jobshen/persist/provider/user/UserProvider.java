@@ -43,5 +43,16 @@ public class UserProvider {
 
         }.toString();
     }
+    
+    public String selectUsers() {
+        return new SQL() {
+
+            {
+                SELECT("id, name, age, sex, birthday, mobile, remark");
+                FROM("user");
+            }
+
+        }.toString();
+    }
 
 }

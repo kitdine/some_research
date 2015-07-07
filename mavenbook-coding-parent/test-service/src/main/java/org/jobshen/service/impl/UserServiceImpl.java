@@ -9,6 +9,8 @@
 
 package org.jobshen.service.impl;
 
+import java.util.List;
+
 import org.jobshen.model.user.User;
 import org.jobshen.persist.mapper.user.UserMapper;
 import org.jobshen.service.UserService;
@@ -35,6 +37,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    @Transactional(readOnly=true)
     public User getUserById(long id) {
         return userMapper.selectUserById(id);
     }
@@ -42,6 +45,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public long insertUser(User user) {
         return userMapper.insertUser(user);
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return userMapper.selectUsers();
     }
     
 

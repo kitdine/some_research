@@ -47,5 +47,10 @@ public enum Sex implements GenericEnum{
 		}
         return null;  
 	}
+	
+	@Override
+	public String toString() {
+	    return getName();
+	}
 
 }
