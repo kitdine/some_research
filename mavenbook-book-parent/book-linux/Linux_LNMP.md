@@ -235,3 +235,14 @@
 	> \# **firewall-cmd --zone=public --add-port=21/tcp --permanent**
 
 	> \# **firewall-cmd --reload**
+
+### Oracle JDK 安装
+1. 下载oracle jdk
+	
+	由于oracle的限制，我们不能直接在centos上使用 **"yum install"**  安装.
+
+	> \# wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.rpm"
+
+2. 安装jdk
+
+	> \# **rpm -Uvh rpm -Uvh jdk-8u45-linux-x64.rpm**
