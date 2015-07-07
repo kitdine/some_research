@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.research.mavenbook.code</groupId>
-			<artifactId>test-persist</artifactId>
+			<artifactId>test-service</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>

@@ -8,33 +8,28 @@
 		<artifactId>mavenbook-coding-parent</artifactId>
 		<version>1.0</version>
 	</parent>
+	<artifactId>test-service</artifactId>
+	<packaging>jar</packaging>
 
-	<artifactId>test-rocketmq-client</artifactId>
-	<packaging>war</packaging>
-	<name>Multi-Spring Chapter Simple Web Application</name>
+	<name>Persistence API</name>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.research.mavenbook.code</groupId>
-			<artifactId>test-service</artifactId>
+			<artifactId>test-persist</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.velocity</groupId>
-			<artifactId>velocity</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-servlet_3.0_spec</artifactId>
-			<scope>provided</scope>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-beans</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -78,19 +73,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-	        <groupId>com.alibaba</groupId>
-	        <artifactId>druid</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>com.alibaba.rocketmq</groupId>
-			<artifactId>rocketmq-client</artifactId>
-			<version>3.2.6</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 	</dependencies>
-	<build>
-		<finalName>test-rocketmq-client</finalName>
-	</build>
 </project>
