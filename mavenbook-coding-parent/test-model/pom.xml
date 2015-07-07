@@ -23,6 +23,10 @@
 			<artifactId>common-utils</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
