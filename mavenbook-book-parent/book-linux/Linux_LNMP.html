@@ -481,6 +481,57 @@ gpgcheck=1
 <p># <strong>systemctl enable php-fpm</strong></p>
 </blockquote>
 </li>
+<li>
+<p><strong>vsFtpd</strong></p>
+<blockquote>
+<p># <strong>yum -y install vsftpd</strong></p>
+</blockquote>
+<p>编辑 <em>vsftpd</em> 的配置文件</p>
+<blockquote>
+<p># <strong>vi /etc/vsftpd/vsftpd.conf</strong></p>
+</blockquote>
+<p>Disallow anonymous, unidentified users to access files via FTP; change the <strong><em>anonymous_enable</em></strong> setting to <strong><em>NO</em></strong> :</p>
+<blockquote>
+<p># <strong>anonymous_enable=NO</strong></p>
+</blockquote>
+<p>Allow local uses to login by changing the <strong><em>local_enable</em></strong> setting to <strong><em>YES</em></strong>:</p>
+<blockquote>
+<p># <strong>local_enable=YES</strong></p>
+</blockquote>
+<p>If you want local user to be able to write to a directory, then change the <strong><em>write_enable</em></strong> setting to <strong><em>YES</em></strong>:</p>
+<blockquote>
+<p># <strong>write_enable=YES</strong></p>
+</blockquote>
+<p>Local users will be ‘chroot jailed’ and they will be denied access to any other part of the server; change the <strong><em>chroot<em>local</em>user</em></strong> setting to <strong><em>YES</em></strong>:</p>
+<blockquote>
+<p># <strong>chroot<em>local</em>user=YES</strong></p>
+</blockquote>
+<p>Exit and save the file with the command <strong><em>:wq</em></strong> .</p>
+<p>重启vsftpd</p>
+<blockquote>
+<p># <strong>systemctl restart vsftpd</strong></p>
+<p>设置自启动项</p>
+<p># <strong>systemctl enale vsftpd</strong></p>
+<p># <strong>firewall-cmd --zone=public --add-port=21/tcp --permanent</strong></p>
+<p># <strong>firewall-cmd --reload</strong></p>
+</blockquote>
+</li>
+</ol>
+<h3>Oracle JDK 安装</h3>
+<ol>
+<li>
+<p>下载oracle jdk</p>
+<p>由于oracle的限制，我们不能直接在centos上使用 <strong>&quot;yum install&quot;</strong>  安装.</p>
+<blockquote>
+<p># wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.rpm&quot;</p>
+</blockquote>
+</li>
+<li>
+<p>安装jdk</p>
+<blockquote>
+<p># <strong>rpm -Uvh rpm -Uvh jdk-8u45-linux-x64.rpm</strong></p>
+</blockquote>
+</li>
 </ol>
 
 </body>
