@@ -8,7 +8,17 @@
 
 安装最新版本就行
 
-> \# **yum install java**  
+> \# **yum install java**  --安装的是openjdk，下面的方式是安装oracle jdk
+
+> \# **wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.rpm"**
+
+> \# **rpm -ivh jdk-8u66-linux-x64.rpm**
+
+这套jdk其实是在/usr/java目录下配置了一套环境。查看此目录，我们可以看到目录下多了个jdk1.8.0_20,同时用软链链接到了default和last两个目录下.
+
+> \# **ls -al /usr/java**
+
+因为软链接的原因,若我们将此次配置的内容指向/usr/java/default/bin/xxx , 以后安装jdk 1.9乃至2.0的话,只要直接修改下软链接即可，而不必再这么搞一遍. 因此下面我将使用 /usr/java/default/ 为新的java home。
 
 ### 2. 下载Nexus
 
